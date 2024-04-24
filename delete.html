@@ -1,0 +1,17 @@
+<script>
+var My = {println:function(x){document.writeln(x + '<br>');}}
+var asso = {};
+key = "john";
+delete asso[key]
+asso["john"] = 234232;
+let keyset=Object.keys(asso);
+My.println(keyset);
+
+
+keyset = [];
+for (let x in asso)
+	keyset.push(x);
+My.println(keyset);
+
+My.println(Object.keys(asso).length);
+</script>
