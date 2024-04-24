@@ -38,12 +38,7 @@
 
    clearTimeout(h);
 
-
    let  handle = setInterval(function(){},2000);
    clearinterval(handle);
    
-
-
-
-
 </script>
