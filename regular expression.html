@@ -1,0 +1,71 @@
+regular expression:
+
+regular expression represents a text pattern
+
+reserved charaacters:
+. represents any char
+* represents 0 or more
+ e.g,  [0]*  matches 0000000000
++ represents 1 or more  occurances
+? represents 0 or 1   occurance  [0]?  str='',str1='0'
+    "3.00".replace(/[\.][0]*/,");
+$ represents the end of string
+^ (usage 1) represents the start of string
+    (usage 2) represents NOT,used inside square bracket[]
+
+  better write
+     "3.00".replace(/[\.][0]*$/,");  delete only zeros at all, but not in the middle
+   
+   "abcd".replace(/^bc/,")
+
+   [^b] means NOT b
+ 
+   "ac".replace(/^[^b]/,'X') -->'Xc'
+   "bc".replace(/^[^b]/,'X') don't match
+\s  empty space,\t
+\d digits
+[0-9]  a single digits
+[a-z] a single lower alphabet
+[A-Z] a capital letter
+
+{}   store matches string and to used later in replacing
+     "xyz12*?3.5sdsd".replace(/([a-z]+)(.*)([a-z]+)/,'$1$2');
+[]   holds more characters to be matched , at least one
+     [0-9]
+     "a".replace(/[0-9]/,")--->'a'
+     "a1a".replace(/a[0-9]a/,")--->''
+|     (sounds "pipe"), means logical OR
+[a|b|c]  matches a or b or c
+
+{}  specifies number of occurances:
+ [a-z]{6}  means   6 letters
+
+in js ,use RegExp class/function to create a regular expression,
+    let r = new RegExp(/\[0-9]/g);
+    let text = "1.ancw\n\n\n\www\n2.fgfgfgf\n\n\n3 dd";
+    
+    let m;
+    let start = 0;
+    while ((m = r.exec(text.substring(start))) != null)
+    {
+	let s = m.toString();//
+	arr.push(s);
+        let I = s.length()
+	start +=I + m.index;
+    
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

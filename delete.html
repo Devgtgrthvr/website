@@ -5,6 +5,7 @@ key = "john";
 delete asso[key]
 asso["john"] = 234232;
 let keyset=Object.keys(asso);
+//Object.key
 My.println(keyset);
 
 
@@ -14,4 +15,13 @@ for (let x in asso)
 My.println(keyset);
 
 My.println(Object.keys(asso).length);
+let person = {  
+    name: "John",
+    age: 30,
+    occupation: "Engineer"
+};
+for (let key in person) 
+{  
+      console.log(key + ": " + person[key]);    
+}
 </script>
